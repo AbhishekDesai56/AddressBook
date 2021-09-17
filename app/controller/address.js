@@ -5,6 +5,7 @@ class AddressBookController {
         const addressBookData = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
+            phoneNumber: req.body.phoneNumber,
             city: req.body.city,
             pinCode: req.body.pinCode,
             address: req.body.address,
