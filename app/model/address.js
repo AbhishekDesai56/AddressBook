@@ -9,6 +9,11 @@ const addressBookSchema =  new mongoose.Schema({
 		type:  String,
 		required: true
 	},
+    phoneNumber: {
+        type: Number,
+        required: true,
+        unique: true
+    },
 	city: {
 		type:  String,
 		required: true
@@ -31,6 +36,7 @@ class AddressBookModel {
         const addressBookDetails = new AddressBookModelDB({
             firstName: addressBookData.firstName,
             lastName: addressBookData.lastName,
+            phoneNumber: addressBookData.phoneNumber,
             city: addressBookData.city,
             pinCode: addressBookData.pinCode,
             address: addressBookData.address,
