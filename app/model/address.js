@@ -58,6 +58,12 @@ class AddressBookModel {
             return err ? getAddressBookDataByIdServiceCallback(err, null) : getAddressBookDataByIdServiceCallback(null, data);
         });
     }
+
+    updateAddressBookData = (addressBookId, addressBookData, serviceUpdateAddressBookCallback) => {
+        AddressBookModelDB.findByIdAndUpdate(addressBookId, addressBookData, (err, data) => {
+            return err ? serviceUpdateAddressBookCallback(err, null) : serviceUpdateAddressBookCallback(null, data);
+        });
+    }
 }
 
 module.exports = new AddressBookModel();
