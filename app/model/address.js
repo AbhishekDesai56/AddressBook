@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
-
-const addressBookSchema =  new Schema({
+const addressBookSchema =  new mongoose.Schema({
 	firstName: {
 		type:  String,
 		required: true
@@ -30,7 +28,7 @@ const AddressBookModelDB = mongoose.model("addressBook", addressBookSchema);
 
 class AddressBookModel {
      saveAddressBookDetails = (addressBookData, serviceAddressBookCallback) => {
-        const addressBookDetails = new AddressBookModel({
+        const addressBookDetails = new AddressBookModelDB({
             firstName: addressBookData.firstName,
             lastName: addressBookData.lastName,
             city: addressBookData.city,
