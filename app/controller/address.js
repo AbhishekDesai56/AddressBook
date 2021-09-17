@@ -24,6 +24,22 @@ class AddressBookController {
             }
         });
     }
+
+    getAddressBookData = (req, res) => {
+        service.getAddressBookData((err, addressBookData) => {
+          if (err) {
+            return res.status(400).send({
+              success: false,
+              message: err.message
+            });
+          }
+          res.status(200).send({
+            success: true,
+            message: 'Data is fetch successfully',
+            data: addressBookData
+          });
+        });
+    }
 }
 
 module.exports = new AddressBookController();
