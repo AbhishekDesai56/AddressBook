@@ -41,6 +41,23 @@ class AddressBookController {
           });
         });
     }
+
+    getAddressBookDataById = (req, res) => {
+        const addressBookId = req.params.addressBookId;
+        service.getAddressBookDataById(addressBookId, (err, addressBookData) => {
+            if (err) {
+            return res.status(400).send({
+                success: false,
+                message: err.message
+            });
+            }
+            res.status(200).send({
+            success: true,
+            message: `Record is found with id ${addressBookId}`,
+            data: addressBookData
+            });
+        });
+    }
 }
 
 module.exports = new AddressBookController();
