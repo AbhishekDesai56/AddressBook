@@ -48,9 +48,15 @@ class AddressBookModel {
     }
 
     getAddressBookData = (getAddressBookDataServiceCallback) => {
-        AddressBookModelDB.find({}, (error, data) => {
-        return error ? getAddressBookDataServiceCallback(error, null) : getAddressBookDataServiceCallback(null, data);
+        AddressBookModelDB.find({}, (err, data) => {
+            return err ? getAddressBookDataServiceCallback(err, null) : getAddressBookDataServiceCallback(null, data);
       });
+    }
+
+    getAddressBookDataById = (addressBookId, getAddressBookDataByIdServiceCallback) => {
+        AddressBookModelDB.findById(addressBookId, (err, data) => {
+            return err ? getAddressBookDataByIdServiceCallback(err, null) : getAddressBookDataByIdServiceCallback(null, data);
+        });
     }
 }
 
