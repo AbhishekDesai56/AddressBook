@@ -6,6 +6,12 @@ class AddressBookService {
             return (err) ? saveAddressBookDataCallback(err, null) : saveAddressBookDataCallback(err, data);
         });
     }
+
+    getAddressBookData = (addressBookDataCallback) => {
+        model.getAddressBookData((err, data) => {
+            return err ? addressBookDataCallback(err, null) : addressBookDataCallback(null, data);
+        });
+    }
 }
 
 module.exports = new AddressBookService();
