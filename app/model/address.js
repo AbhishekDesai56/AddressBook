@@ -40,6 +40,12 @@ class AddressBookModel {
             return err ? serviceAddressBookCallback(err, null) : serviceAddressBookCallback(null, data);
         });
     }
+
+    getAddressBookData = (getAddressBookDataServiceCallback) => {
+        AddressBookModelDB.find({}, (error, data) => {
+        return error ? getAddressBookDataServiceCallback(error, null) : getAddressBookDataServiceCallback(null, data);
+      });
+    }
 }
 
 module.exports = new AddressBookModel();
