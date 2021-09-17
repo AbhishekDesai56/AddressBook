@@ -18,6 +18,12 @@ class AddressBookService {
             return err ? addressBookDataCallback(err, null) : addressBookDataCallback(null, data);
         });
     }
+
+    updateAddressBookData = (addressBookId, addressBookData, addressBookDataCallback) => {
+        model.updateAddressBookData(addressBookId, addressBookData, (err, data) => {
+            return err ? addressBookDataCallback(err, null) : addressBookDataCallback(null,data);
+        });
+    }
 }
 
 module.exports = new AddressBookService();
