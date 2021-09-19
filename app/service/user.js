@@ -1,4 +1,4 @@
-const model = require("../models/user");
+const model = require("../model/user");
 
 class UserService {
     registerUser = (userData, saveUserDataCallback) => {
