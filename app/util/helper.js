@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 class Helper {
     httpStatusCodeEnum  = Object.freeze({
@@ -14,11 +15,15 @@ class Helper {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
         return hashedPassword;
-    };
+    }
     
     decryptPassword = async (password, hashedPassword) => {
         return bcrypt.compare(password, hashedPassword);
-    }; 
+    }
+
+    generateToken = (data) => {
+        return jwt.sign({ data }, process.env.TOKEN_KEY, { expiresIn: "30m" });
+    }
 }
 
 module.exports = new Helper();
