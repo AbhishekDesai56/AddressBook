@@ -42,6 +42,7 @@ class UserController {
             return res.status(helper.httpStatusCodeEnum.OK).json({
                 success: true,
                 message: "User logged in successfully",
+                token: helper.generateToken(data),
             });
         });
     };
