@@ -9,6 +9,8 @@ class Helper {
         BAD_REQUEST : 400,
         NOT_FOUND : 404,
         INTERNAL_SERVER : 500,
+        UNAUTHORIZED : 401,
+        FORBIDDEN : 403 
     });
 
     securePassword = async (password) => {
@@ -24,6 +26,32 @@ class Helper {
     generateToken = (data) => {
         return jwt.sign({ data }, process.env.TOKEN_KEY, { expiresIn: "30m" });
     }
+
+    verifyToken = (req, res, next) => {
+    const token =  req.get("token") || req.headers.authorization;
+    if (!token) {
+      return res.status(this.httpStatusCodeEnum.FORBIDDEN).send({
+          message: "A token is required for authenication"
+      });
+    }
+
+    try {
+    let removedBearerFromHeaderToken = token.replace("Bearer",'').trim();
+      jwt.verify(removedBearerFromHeaderToken, process.env.TOKEN_KEY,{ algorithm: 'RS256' }, (err) => {
+          if (err) {
+              return res.status(this.httpStatusCodeEnum.BAD_REQUEST).send({
+                  success: false,
+                  message: "Invalid Token",
+              });
+          }
+      });
+    } catch (ex) {
+      return res.status(this.httpStatusCodeEnum.UNAUTHORIZED).send({
+          message: ex.message,
+      });
+    }
+    return next();
+    };
 }
 
 module.exports = new Helper();
