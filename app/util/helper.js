@@ -14,6 +14,10 @@ class Helper {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
         return hashedPassword;
+    };
+    
+    decryptPassword = async (password, hashedPassword) => {
+        return bcrypt.compare(password, hashedPassword);
     }; 
 }
 
