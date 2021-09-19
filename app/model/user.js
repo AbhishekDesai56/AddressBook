@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const helper = require("../util/helper");
 
 const userSchema =  new mongoose.Schema({
 	firstName: {
@@ -37,12 +38,23 @@ class UserModel {
         });
     }
 
-    loginUser = (loginData, authenticateUserServiceCallback) => {
-        const passwordEnteredByUser = loginData.password;
-        
-        const userCredentials  = { email: loginData.email, password: loginData.password }
-        userModelDB.findOne(userCredentials, (err, data) => {
-            return (err) ? authenticateUserServiceCallback(err, null) : authenticateUserServiceCallback(null, data);
+    loginUser =  (loginData, authenticateUserServiceCallback) => {
+        const userCredentials  = { email: loginData.email}
+        userModelDB.find(userCredentials, async (err, data) => {
+            if (err) {
+               return authenticateUserServiceCallback(err, null)
+            } else {
+                const hash = await userModelDB.findOne(userCredentials);
+                if(hash === null)
+                    return authenticateUserServiceCallback("Invalid User Credentials", null);
+
+                const isPasswordMatch = await helper.decryptPassword(loginData.password, hash.password);
+                if (!isPasswordMatch) {
+                    return authenticateUserServiceCallback("Password doesn't match!", null);
+                } else {
+                    return authenticateUserServiceCallback(null, data);
+                }
+            }
         });
     }
 }
