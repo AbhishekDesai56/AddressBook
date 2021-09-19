@@ -6,6 +6,12 @@ class UserService {
             return (err) ? saveUserDataCallback(err, null) : saveUserDataCallback(err, data);
         });
     }
+
+    loginUser = (loginDetails, authenticateUser) => {
+        model.loginUser(loginDetails, (err, data) => {
+            return (err) ? authenticateUser(err, null) : authenticateUser(null, data);
+        });
+    }
 }
 
 module.exports = new UserService();
