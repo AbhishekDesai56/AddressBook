@@ -33,13 +33,16 @@ class UserController {
         };
 
         service.loginUser(loginDetails, (err, data) => {
-        if (err) {
-            return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({ success: false, message: err.message, data });
-        } 
-        return res.status(helper.httpStatusCodeEnum.OK).json({
-            success: true,
-            message: "User logged in successfully",
-        });
+            if (err) {
+                return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({ 
+                    success: false, 
+                    message: err,
+                });
+            } 
+            return res.status(helper.httpStatusCodeEnum.OK).json({
+                success: true,
+                message: "User logged in successfully",
+            });
         });
     };
 }
