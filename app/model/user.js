@@ -10,7 +10,7 @@ const userSchema =  new mongoose.Schema({
 		required: true
 	},
     email: {
-        type: Number,
+        type: String,
         required: true,
         unique: true
     },
@@ -31,7 +31,7 @@ class UserModel {
       email: userDetails.email,
       password: userDetails.password,
     });
-    
+
     newUser.save((error, data) => {
       return error ? saveUserDataServiceCallback(error, null) : saveUserDataServiceCallback(null, data);
     });
