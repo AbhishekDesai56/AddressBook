@@ -64,6 +64,12 @@ class AddressBookModel {
             return err ? serviceUpdateAddressBookCallback(err, null) : serviceUpdateAddressBookCallback(null, data);
         });
     }
+
+    deleteAddressBookDataById = (addressBookId, serviceDeleteAddressBookCallback) => {
+        AddressBookModelDB.findByIdAndRemove(addressBookId, (err, data) => {
+            return err ? serviceDeleteAddressBookCallback(err, null) : serviceDeleteAddressBookCallback(null, data);
+        });
+    }
 }
 
 module.exports = new AddressBookModel();
