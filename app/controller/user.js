@@ -1,8 +1,17 @@
 const service = require('../service/user');
 const helper = require('../util/helper');
+const validInput = require("../util/userValidation");
 
 class UserController {
     saveUserData = async (req, res) => {
+        const userValidInput = validInput.validate(req.body);
+        if (userValidInput.error) {
+            return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({
+                success: false,
+                message: userValidInput.error.message
+            })
+		} 
+
         const hashedPassword = await helper.securePassword(req.body.password);
         const userData = {
             firstName: req.body.firstName,
