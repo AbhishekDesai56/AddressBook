@@ -1,8 +1,16 @@
 const service = require('../service/address');
 const helper = require('../util/helper');
-
+const validInput = require('../util/addressValidation')
 class AddressBookController {
     saveAddressBookData = (req, res) => {
+        const userValidInput = validInput.validate(req.body);
+        if (userValidInput.error) {
+            return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({
+                success: false,
+                message: userValidInput.error.message
+            })
+		} 
+
         const addressBookData = {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -89,6 +97,30 @@ class AddressBookController {
             res.status(helper.httpStatusCodeEnum.INTERNAL_SERVER).send({
                 success: false,
                 message: ex.message,
+            });
+        }
+    }
+
+    deleteAddressBookDataById = (req, res) => {
+        try {
+            const addressBookId = req.params.addressBookId;
+            service.deleteAddressBookDataById(addressBookId, (err, data) => {
+                if (err) {
+                    return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
+                        success: false,
+                        message: err.message
+                    });
+                } 
+               res.status(helper.httpStatusCodeEnum.OK).send({
+                    success: true,
+                    message: `AddressBook Deleted Successfully`,
+                });
+            });
+        }
+        catch(ex) {
+            res.status(helper.httpStatusCodeEnum.INTERNAL_SERVER).send({
+                success: false,
+                message: ex.message
             });
         }
     }
