@@ -24,6 +24,16 @@ class AddressBookService {
             return err ? addressBookDataCallback(err, null) : addressBookDataCallback(null,data);
         });
     }
+
+    deleteAddressBookDataById = (employeeId, deleteAddressBookById) => {
+    try {
+      model.deleteAddressBookDataById(employeeId, (error, data) => {
+        return error ? deleteAddressBookById(error, null) : deleteAddressBookById(null, data);
+      });
+    } catch (ex) {
+      return deleteAddressBookById(ex.message, null);
+    }
+  }
 }
 
 module.exports = new AddressBookService();
