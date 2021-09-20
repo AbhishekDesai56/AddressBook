@@ -80,6 +80,14 @@ class AddressBookController {
                 address: req.body.address,
             };
 
+            const userValidInput = validInput.validate(req.body);
+            if (userValidInput.error) {
+                return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({
+                    success: false,
+                    message: userValidInput.error.message
+                })
+            } 
+
             service.updateAddressBookData(addressBookId,addressBookData, (err, addressBookData) => {
                 if (err) {
                     return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
