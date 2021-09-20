@@ -1,4 +1,5 @@
 const model = require("../model/user");
+const helper = require('../util/helper');
 
 class UserService {
     registerUser = (userData, saveUserDataCallback) => {
@@ -9,7 +10,12 @@ class UserService {
 
     loginUser = (loginDetails, authenticateUser) => {
         model.loginUser(loginDetails, (err, data) => {
-            return (err) ? authenticateUser(err, null) : authenticateUser(null, data);
+             if (err) { 
+                 return authenticateUser(err, null) 
+                } else {
+                const token = helper.generateToken(loginDetails);
+                return authenticateUser(null, token);
+            } 
         });
     }
 }
