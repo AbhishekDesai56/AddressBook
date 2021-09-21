@@ -57,7 +57,7 @@ class AddressBookController {
             if (err) {
             return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                 success: false,
-                message: err.message
+                message: "Please enter valid addressbook id"
             });
             }
             res.status(helper.httpStatusCodeEnum.OK).send({
@@ -92,7 +92,7 @@ class AddressBookController {
                 if (err) {
                     return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                         success: false,
-                        message: err.message
+                        message: "Please enter valid addressbook id"
                     });
                 }
                 res.status(helper.httpStatusCodeEnum.OK).send({
@@ -116,7 +116,7 @@ class AddressBookController {
                 if (err) {
                     return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                         success: false,
-                        message: err.message
+                        message: "Please check for valid addressbook id"
                     });
                 } 
                res.status(helper.httpStatusCodeEnum.OK).send({
