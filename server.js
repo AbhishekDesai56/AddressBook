@@ -12,6 +12,8 @@ app.get("/", (req, res) => {
 
 require("./app/routes/routes")(app);
 
-app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT, () => {
 	console.log(`App listening at http://localhost:${process.env.PORT}`);
 });
+
+module.exports = server
