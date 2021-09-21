@@ -1,0 +1,126 @@
+{
+	"user":{
+		"userData": {
+			"firstName":"June",
+			"lastName":"Don",
+			"email":"JuneDon@gmail.com",
+			"password": "Abhi@123"
+		},
+		"registerUserWithoutFirstname": {
+			"lastName":"Don",
+			"email":"John@gmail.com",
+			"password": "Abhi@123"
+		},
+		"registerUserWithoutLastname": {
+			"firstName":"John",
+			"email":"John@gmail.com",
+			"password": "Abhi@123"
+		},
+		"registerUserWithoutEmail": {
+			"firstName":"John",
+			"lastName":"Don",
+			"password": "Abhi@123"
+		},
+		"registerUserWithoutPassword": {
+			"firstName":"John",
+			"lastName":"Don",
+			"email":"John@gmail.com"
+		},
+        "login":{
+             "loginUserWithValidCredentials": {
+                "email":"John@gmail.com",
+                "password": "Abhi@123"
+		    },
+            "loginUserWithIncorrectPassword": {
+                "email":"John@gmail.com",
+                "password": "Abhi@12310"
+		    },
+            "loginUserWithInvalidCredentials": {
+                "email":"John12@gmail.com",
+                "password": "Abhi@12344"
+		    }
+        },
+
+		"addressBook": {
+			"addressBookDetails":{
+				"firstName":"David",
+				"lastName": "Doe",
+				"phoneNumber": 1199987255,
+				"city":"Mumbai",
+				"pinCode":400000,
+				"address":"Mumbai"
+			},
+
+			"addressBookDetailsWithNoFirstName":{
+				"lastName": "Doe",
+				"phoneNumber": 1199882255,
+				"city":"Mumbai",
+				"pinCode":400000,
+				"address":"He is HR"
+			},
+			"addressBookDetailsWithNoLastName":{
+				"firstName":"Willson",
+				"phoneNumber": 1199882255,
+				"city":"Mumbai",
+				"pinCode":400000,
+				"address":"He is HR"
+			},
+			"addressBookDetailsWithNoPhoneNumber":{
+				"firstName":"Willson",
+				"lastName": "Doe",
+				"city":"Mumbai",
+				"pinCode":400000,
+				"address":"He is HR"
+			},
+			"addressBookDetailsWithNoCity":{
+			    "firstName":"Willson",
+				"lastName": "Doe",
+				"phoneNumber": 1199882255,
+				"pinCode":400000,
+				"address":"He is HR"
+			},
+
+			"addressBookDetailsWithNoPinCode":{
+				"firstName":"Willson",
+				"lastName": "Doe",
+				"phoneNumber": 1199882255,
+				"city":"Mumbai",
+				"address":"He is HR"
+			},
+			
+			"addressBookDetailsWithNoAddress":{
+                "firstName":"Willson",
+				"lastName": "Doe",
+				"phoneNumber": 1199882255,
+				"city":"Mumbai",
+				"pinCode":400000
+            },
+
+            "addressBookDetailsWithInvalidPhoneNumber":{
+                "firstName":"Willson",
+				"lastName": "Doe",
+				"phoneNumber": 11998822,
+				"city":"Mumbai",
+				"pinCode":400000,
+                "address":"He is HR"
+            },
+
+			"addressBookId":{
+        		"id":"614a57baaadee163ef1d0188"
+    		},
+
+			"incorrectAddressBookId":{
+        		"id":"614a57baaadee163ef1d018"
+    		},
+
+			"updateaddressBookDetails":{
+				"firstName":"Neil",
+				"lastName": "Doe",
+				"phoneNumber": 1199882211,
+				"city":"Mumbai",
+				"pinCode":400000,
+                "address":"He is HR"
+			}
+		}
+	}
+}
