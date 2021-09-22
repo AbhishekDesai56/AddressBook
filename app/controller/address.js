@@ -1,6 +1,7 @@
 const service = require('../service/address');
 const helper = require('../util/helper');
 const validInput = require('../util/addressValidation')
+const logger = require('logger').createLogger("logger/development.log");
 class AddressBookController {
     saveAddressBookData = (req, res) => {
         const userValidInput = validInput.validate(req.body);
@@ -22,6 +23,7 @@ class AddressBookController {
 
         service.saveAddressBookDetails(addressBookData, (err, data) => {
             if (err) {
+                logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - ${err.message}`);
                 return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({
                     success: false,
                     message: err.message
@@ -38,6 +40,7 @@ class AddressBookController {
     getAddressBookData = (req, res) => {
         service.getAddressBookData((err, addressBookData) => {
           if (err) {
+            logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - ${err.message}`);
             return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
               success: false,
               message: err.message
@@ -55,11 +58,13 @@ class AddressBookController {
         const addressBookId = req.params.addressBookId;
         service.getAddressBookDataById(addressBookId, (err, addressBookData) => {
             if (err) {
+                logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - Please enter valid addressbook id`);
                 return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                     success: false,
                     message: "Please enter valid addressbook id"
                 });
             } else if (addressBookData === null) {
+                logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - Data Not Found`);
                  return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                     success: false,
                     message: "Please enter valid addressbook id"
@@ -88,6 +93,7 @@ class AddressBookController {
 
             const userValidInput = validInput.validate(req.body);
             if (userValidInput.error) {
+                logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - ${userValidInput.error.message}`);
                 return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).json({
                     success: false,
                     message: userValidInput.error.message
@@ -96,6 +102,7 @@ class AddressBookController {
 
             service.updateAddressBookData(addressBookId,addressBookData, (err, addressBookData) => {
                 if (err) {
+                    logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - Please enter valid addressbook id`);
                     return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                         success: false,
                         message: "Please enter valid addressbook id"
@@ -108,6 +115,7 @@ class AddressBookController {
             });
         } 
         catch(ex) {
+            logger.error(`${helper.httpStatusCodeEnum.INTERNAL_SERVER} - ${ex.message}`);
             res.status(helper.httpStatusCodeEnum.INTERNAL_SERVER).send({
                 success: false,
                 message: ex.message,
@@ -120,6 +128,7 @@ class AddressBookController {
             const addressBookId = req.params.addressBookId;
             service.deleteAddressBookDataById(addressBookId, (err, data) => {
                 if (err) {
+                    logger.error(`${helper.httpStatusCodeEnum.BAD_REQUEST} - Please check for valid addressbook id`);
                     return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
                         success: false,
                         message: "Please check for valid addressbook id"
@@ -132,6 +141,7 @@ class AddressBookController {
             });
         }
         catch(ex) {
+            logger.error(`${helper.httpStatusCodeEnum.INTERNAL_SERVER} - ${ex.message}`);
             res.status(helper.httpStatusCodeEnum.INTERNAL_SERVER).send({
                 success: false,
                 message: ex.message
