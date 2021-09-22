@@ -1,5 +1,7 @@
 require("dotenv").config();
 require("./config/connection");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger/swagger.json')
 const express = require("express");
 const app = express();
 
@@ -16,4 +18,5 @@ const server = app.listen(process.env.PORT, () => {
 	console.log(`App listening at http://localhost:${process.env.PORT}`);
 });
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 module.exports = server
