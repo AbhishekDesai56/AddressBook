@@ -55,11 +55,17 @@ class AddressBookController {
         const addressBookId = req.params.addressBookId;
         service.getAddressBookDataById(addressBookId, (err, addressBookData) => {
             if (err) {
-            return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
-                success: false,
-                message: "Please enter valid addressbook id"
-            });
+                return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
+                    success: false,
+                    message: "Please enter valid addressbook id"
+                });
+            } else if (addressBookData === null) {
+                 return res.status(helper.httpStatusCodeEnum.BAD_REQUEST).send({
+                    success: false,
+                    message: "Please enter valid addressbook id"
+                });
             }
+
             res.status(helper.httpStatusCodeEnum.OK).send({
             success: true,
             message: `Record is found with id ${addressBookId}`,
