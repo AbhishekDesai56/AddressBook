@@ -1,0 +1,266 @@
+  
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Sample API",
+        "description": "API Description For User",
+        "version": "1.0.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/saveUserData": {
+          "post": {
+            "tags": ["Register"],
+            "summary": "New user registration",
+            "parameters": [
+                  {
+                      "in": "body",
+                      "name": "Register",
+                      "schema": {
+                          "$ref": "#/definitions/User"
+                      },
+                      "description": "Register new user using post"
+                  }
+              ],
+              "responses": {
+                  "201": {
+                      "description": "User Data has been save successfully"
+                  }
+              }
+          }
+      },
+        "/login": {
+          "post": {
+            "tags": ["Login"],
+            "summary": "Autheniticate User",
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Login",
+                    "schema": {
+                        "$ref": "#/definitions/UserCredentials"
+                    },
+                    "description": "Validating the valid user"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "User logged in successfully"
+                }
+            }
+        }
+      },
+    "/saveAddressBookData": {
+      "post": {
+        "tags": ["Create AddressBook"],
+        "summary": "Create new addressBook",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Create AddressBook",
+            "schema": {
+                "$ref": "#/definitions/AddressBook"
+            },
+            "description": "Creating a new addressbook"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Address Book Data has been save successfully"
+          },
+          "400": {
+              "description": "Error Occured"
+          }
+        },
+        "security":[
+          {
+            "JWT":[]
+          }
+        ]
+      }
+    },
+    "/getAddressBookData": {
+      "get": {
+        "tags": ["Get All AddressBook Details"],
+        "summary": "Fetch all addressBook details",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Data is fetch successfully"
+          },
+          "400": {
+              "description": "Error Occured"
+          }
+        },
+        "security":[
+          {
+            "JWT":[]
+          }
+        ]
+      }
+    },
+
+    "/getAddressBookData/{addressBookId}":{
+      "get": {
+        "tags": ["Get AddressBook By Id"],
+        "summary": "Get addressbook by Id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "addressBookId",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Record found successfully"
+          },
+          "400": {
+            "description":"Please enter valid addressbook id"
+          }
+      },
+      "security":[
+        {
+          "JWT":[]
+        }
+      ]
+    }
+  },
+  "/updateAddressBookData/{addressBookId}":{
+    "put":{
+      "tags": ["Update AddressBook"],
+      "summary": "Update AddressBook Details",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "addressBookId",
+          "type":"string"
+        },
+        {
+          "in": "body",
+          "name": "Update AddressBook Details",
+          "schema": {
+            "$ref": "#/definitions/AddressBook"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Record updated successfully"
+        },
+        "500":{
+          "description":"Internal server error found"        
+        }
+    },
+    "security":[
+      {
+        "JWT":[]
+      }
+    ]
+  }
+},
+
+"/deleteAddressBookData/{addressBookId}":{
+  "delete":{
+    "tags": ["Delete AddressBook By Id"],
+    "summary": "Delete AddressBook Details",
+    "parameters": [
+      {
+        "in": "path",
+        "name": "addressBookId",
+        "type":"string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "AddressBook Deleted Successfully"
+      },
+      "400": {
+        "description":"Please check for valid addressbook id"
+      },
+      "500":{
+        "description":"Internal server error found"        
+      }
+    },
+    "security":[
+      {
+        "JWT":[]
+      }
+    ]
+  }
+}
+},
+    
+"securityDefinitions":{
+  "JWT":{
+    "type": "apiKey",
+    "name": "token",
+    "in":"Headers"
+  }
+},
+
+"definitions": {
+    "User": {
+        "type": "object",
+        "properties": {
+            "firstName": {
+                "type": "string"
+            },
+            "lastName": {
+                "type": "string"
+            },
+            "email": {
+                "type": "string"
+            },
+            "password": {
+                "type": "string"
+            }
+        }
+    },
+    "AddressBook":{
+        "type":"object",
+        "properties":{
+            "firstName": {
+                "type": "string"
+            },
+            "lastName": {
+                "type": "string"
+            },
+            "phoneNumber": {
+                "type": "number"
+            },
+            "city": {
+                "type": "string"
+            },
+            "pinCode": {
+                "type": "number"
+            },
+            "address": {
+                "type": "string"
+            }
+        }
+    },
+   "UserCredentials": {
+        "type": "object",
+        "properties": {
+            "email": {
+                "type": "string"
+            },
+            "password": {
+                "type": "string"
+            }
+        }    
+    }
+  }
+}
