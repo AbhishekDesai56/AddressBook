@@ -25,7 +25,7 @@ require("./app/routes/routes")(app);
 
 const server = app.listen(process.env.PORT, () => {
   //logger.info(`Server is listening on port ${process.env.PORT}`);
-  console.log(`App listening at http://localhost:${process.env.PORT}`);
+  console.log(`App listening at http://localhost:${process.env.PORT} Successfully`);
 });
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
