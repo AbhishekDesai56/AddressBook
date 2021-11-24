@@ -16,3 +16,292 @@ info [Wed Sep 22 2021 06:48:35 GMT+0530 (India Standard Time)]  Successfully con
 
 info [Wed Sep 22 2021 06:48:40 GMT+0530 (India Standard Time)]  Server is listening on port 3000
 info [Wed Sep 22 2021 06:48:40 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Wed Sep 22 2021 08:22:45 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Sep 22 2021 08:22:45 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Wed Sep 22 2021 08:22:45 GMT+0530 (India Standard Time)]  In user - 400 - "firstName" is required
+error [Wed Sep 22 2021 08:22:45 GMT+0530 (India Standard Time)]  In user - 400 - "lastName" is required
+error [Wed Sep 22 2021 08:22:45 GMT+0530 (India Standard Time)]  In user - 400 - "email" is required
+error [Wed Sep 22 2021 08:22:45 GMT+0530 (India Standard Time)]  In user - 400 - "password" is required
+error [Wed Sep 22 2021 08:22:46 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+error [Wed Sep 22 2021 08:22:46 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+error [Wed Sep 22 2021 08:22:47 GMT+0530 (India Standard Time)]  400 - Please enter valid addressbook id
+error [Wed Sep 22 2021 08:22:47 GMT+0530 (India Standard Time)]  400 - Please enter valid addressbook id
+error [Wed Sep 22 2021 08:22:47 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+
+
+
+
+info [Wed Sep 22 2021 08:24:28 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Sep 22 2021 08:24:28 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  In User, 400 - E11000 duplicate key error collection: addressbook.users index: email_1 dup key: { email: "JuneDon@gmail.com" }
+error [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  In user - 400 - "firstName" is required
+error [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  In user - 400 - "lastName" is required
+error [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  In user - 400 - "email" is required
+error [Wed Sep 22 2021 08:38:34 GMT+0530 (India Standard Time)]  In user - 400 - "password" is required
+error [Wed Sep 22 2021 08:38:35 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+error [Wed Sep 22 2021 08:38:35 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+error [Wed Sep 22 2021 08:38:35 GMT+0530 (India Standard Time)]  400 - E11000 duplicate key error collection: addressbook.addressbooks index: phoneNumber_1 dup key: { phoneNumber: 1199987255 }
+error [Wed Sep 22 2021 08:38:36 GMT+0530 (India Standard Time)]  400 - Data Not Found
+error [Wed Sep 22 2021 08:38:36 GMT+0530 (India Standard Time)]  400 - Please enter valid addressbook id
+error [Wed Sep 22 2021 08:38:36 GMT+0530 (India Standard Time)]  400 - Please enter valid addressbook id
+error [Wed Sep 22 2021 08:38:36 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+
+
+
+
+info [Wed Sep 22 2021 22:05:25 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Sep 22 2021 22:05:25 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Fri Sep 24 2021 10:00:34 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  In user - 400 - "firstName" is required
+error [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  In user - 400 - "lastName" is required
+error [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  In user - 400 - "email" is required
+error [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  In user - 400 - "password" is required
+error [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+error [Fri Sep 24 2021 10:00:35 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+error [Fri Sep 24 2021 10:00:36 GMT+0530 (India Standard Time)]  400 - Data Not Found
+error [Fri Sep 24 2021 10:00:36 GMT+0530 (India Standard Time)]  400 - Please enter valid addressbook id
+error [Fri Sep 24 2021 10:00:37 GMT+0530 (India Standard Time)]  400 - Please enter valid addressbook id
+error [Fri Sep 24 2021 10:00:37 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+
+
+
+
+info [Mon Nov 08 2021 04:10:43 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 08 2021 04:11:04 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Mon Nov 08 2021 04:13:49 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 08 2021 04:13:49 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 09 2021 20:01:50 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 09 2021 20:01:50 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 09 2021 21:39:57 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 09 2021 21:39:57 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 09 2021 22:16:31 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 09 2021 22:16:31 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 09 2021 23:30:52 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 09 2021 23:30:52 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Wed Nov 10 2021 22:13:16 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Nov 10 2021 22:13:18 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Wed Nov 10 2021 22:54:16 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Nov 10 2021 22:54:16 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Wed Nov 10 2021 23:26:35 GMT+0530 (India Standard Time)]  Successfully connected to the database
+info [Wed Nov 10 2021 23:26:35 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+
+
+
+
+info [Wed Nov 10 2021 23:29:17 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Nov 10 2021 23:29:17 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Wed Nov 10 2021 23:29:56 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Wed Nov 10 2021 23:29:56 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Wed Nov 10 2021 23:30:21 GMT+0530 (India Standard Time)]  In User, 400 - undefined
+
+
+
+
+info [Thu Nov 11 2021 01:40:15 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 11 2021 01:40:15 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Thu Nov 11 2021 01:48:35 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 11 2021 01:48:36 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Thu Nov 11 2021 07:46:53 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 11 2021 07:46:53 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Thu Nov 11 2021 08:29:37 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+error [Thu Nov 11 2021 08:29:38 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+error [Thu Nov 11 2021 08:29:42 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+error [Thu Nov 11 2021 08:30:01 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+error [Thu Nov 11 2021 08:30:02 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+error [Thu Nov 11 2021 08:30:02 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+error [Thu Nov 11 2021 08:30:15 GMT+0530 (India Standard Time)]  400 - Please check for valid addressbook id
+
+
+
+
+info [Thu Nov 11 2021 08:33:43 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 11 2021 08:33:43 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Thu Nov 11 2021 08:37:57 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 11 2021 08:37:57 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Thu Nov 11 2021 22:26:56 GMT+0530 (India Standard Time)]  Successfully connected to the database
+info [Thu Nov 11 2021 22:26:54 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+
+
+
+
+info [Thu Nov 11 2021 22:30:38 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 11 2021 22:30:38 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Sat Nov 13 2021 07:32:08 GMT+0530 (India Standard Time)]  Successfully connected to the database
+info [Sat Nov 13 2021 07:32:08 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+
+
+
+
+info [Sat Nov 13 2021 18:20:24 GMT+0530 (India Standard Time)]  Successfully connected to the database
+info [Sat Nov 13 2021 18:20:24 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+
+
+
+
+info [Sat Nov 13 2021 18:20:54 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Sat Nov 13 2021 18:20:54 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Mon Nov 15 2021 00:40:12 GMT+0530 (India Standard Time)]  In user - 400 - "password" with value "Abd@123" fails to match the required pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8}$/
+error [Mon Nov 15 2021 00:43:37 GMT+0530 (India Standard Time)]  In user - 400 - "password" with value "Abd@123" fails to match the required pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8}$/
+error [Mon Nov 15 2021 00:45:21 GMT+0530 (India Standard Time)]  In user - 400 - "password" with value "Abd@123" fails to match the required pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8}$/
+
+
+
+
+info [Mon Nov 15 2021 00:46:35 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 15 2021 00:46:35 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Mon Nov 15 2021 01:17:13 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 15 2021 01:17:14 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Mon Nov 15 2021 02:44:13 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 15 2021 02:44:13 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Mon Nov 15 2021 08:35:00 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 15 2021 08:35:00 GMT+0530 (India Standard Time)]  Successfully connected to the database
+error [Mon Nov 15 2021 08:35:16 GMT+0530 (India Standard Time)]  400 - E11000 duplicate key error collection: addressbook.addressbooks index: phoneNumber_1 dup key: { phoneNumber: 9999999999.0 }
+
+
+
+
+info [Mon Nov 15 2021 08:35:45 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Mon Nov 15 2021 08:35:45 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 16 2021 20:46:37 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 16 2021 20:46:37 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 16 2021 23:58:17 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 16 2021 23:58:17 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Tue Nov 16 2021 23:58:34 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Tue Nov 16 2021 23:58:34 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Thu Nov 18 2021 08:06:24 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 18 2021 08:06:40 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Thu Nov 18 2021 08:53:26 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Thu Nov 18 2021 08:53:39 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Fri Nov 19 2021 08:12:17 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Fri Nov 19 2021 08:12:39 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Fri Nov 19 2021 08:12:53 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Fri Nov 19 2021 08:13:22 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Sat Nov 20 2021 07:59:05 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Sat Nov 20 2021 07:59:25 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Sat Nov 20 2021 08:06:31 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Sat Nov 20 2021 08:06:57 GMT+0530 (India Standard Time)]  Successfully connected to the database
+
+
+
+
+info [Sat Nov 20 2021 08:08:34 GMT+0530 (India Standard Time)]  Server is listening on port 3000
+info [Sat Nov 20 2021 08:08:34 GMT+0530 (India Standard Time)]  Successfully connected to the database
